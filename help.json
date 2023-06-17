@@ -1,0 +1,4 @@
+{
+    'xmake generate cmake project(in project directory)':'xmake project -k cmakelists',
+    'cmake build debug':'cmake -DCMAKE_BUILD_TYPE=Debug'
+}
