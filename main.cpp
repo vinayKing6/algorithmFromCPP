@@ -13,6 +13,7 @@
 #include "./test/StackTest.cpp"
 #include "./test/QueueTest.cpp"
 #include "./solution/ListQues.cpp"
+#include "./solution/STL/STLQues.cpp"
 
 using namespace Algorithm;
 
@@ -304,6 +305,7 @@ int main() {
     // TEST::TestArrayStack();
     // TEST::TestLinkedStack();
     // TEST::TestArrayQueue();
-    SOLUTION::TestListQues();
+    // SOLUTION::TestListQues();
+    SOLUTION::TestJB_5_1();
     return 0;
 }
