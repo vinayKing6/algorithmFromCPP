@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/vinay/Data/myFile/sharing_files/from_ubuntu/computer_science/Algorithm/code
+CMAKE_SOURCE_DIR = /root/work/algorithmFromCPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/vinay/Data/myFile/sharing_files/from_ubuntu/computer_science/Algorithm/code
+CMAKE_BINARY_DIR = /root/work/algorithmFromCPP
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/vinay/Data/myFile/sharing_files/from_ubuntu/computer_science/Algorithm/code/CMakeFiles /media/vinay/Data/myFile/sharing_files/from_ubuntu/computer_science/Algorithm/code/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/work/algorithmFromCPP/CMakeFiles /root/work/algorithmFromCPP/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/vinay/Data/myFile/sharing_files/from_ubuntu/computer_science/Algorithm/code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/work/algorithmFromCPP/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -231,6 +231,33 @@ src/CStyle/Stack.cpp.s:
 	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/CStyle/Stack.cpp.s
 .PHONY : src/CStyle/Stack.cpp.s
 
+src/CStyle/String.o: src/CStyle/String.cpp.o
+
+.PHONY : src/CStyle/String.o
+
+# target to build an object file
+src/CStyle/String.cpp.o:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/CStyle/String.cpp.o
+.PHONY : src/CStyle/String.cpp.o
+
+src/CStyle/String.i: src/CStyle/String.cpp.i
+
+.PHONY : src/CStyle/String.i
+
+# target to preprocess a source file
+src/CStyle/String.cpp.i:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/CStyle/String.cpp.i
+.PHONY : src/CStyle/String.cpp.i
+
+src/CStyle/String.s: src/CStyle/String.cpp.s
+
+.PHONY : src/CStyle/String.s
+
+# target to generate assembly for a file
+src/CStyle/String.cpp.s:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/CStyle/String.cpp.s
+.PHONY : src/CStyle/String.cpp.s
+
 src/CStyle/Util.o: src/CStyle/Util.cpp.o
 
 .PHONY : src/CStyle/Util.o
@@ -312,6 +339,33 @@ src/Sort.cpp.s:
 	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/Sort.cpp.s
 .PHONY : src/Sort.cpp.s
 
+src/stringMatch.o: src/stringMatch.cpp.o
+
+.PHONY : src/stringMatch.o
+
+# target to build an object file
+src/stringMatch.cpp.o:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/stringMatch.cpp.o
+.PHONY : src/stringMatch.cpp.o
+
+src/stringMatch.i: src/stringMatch.cpp.i
+
+.PHONY : src/stringMatch.i
+
+# target to preprocess a source file
+src/stringMatch.cpp.i:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/stringMatch.cpp.i
+.PHONY : src/stringMatch.cpp.i
+
+src/stringMatch.s: src/stringMatch.cpp.s
+
+.PHONY : src/stringMatch.s
+
+# target to generate assembly for a file
+src/stringMatch.cpp.s:
+	$(MAKE) -f CMakeFiles/algorithm.dir/build.make CMakeFiles/algorithm.dir/src/stringMatch.cpp.s
+.PHONY : src/stringMatch.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -333,6 +387,9 @@ help:
 	@echo "... src/CStyle/Stack.o"
 	@echo "... src/CStyle/Stack.i"
 	@echo "... src/CStyle/Stack.s"
+	@echo "... src/CStyle/String.o"
+	@echo "... src/CStyle/String.i"
+	@echo "... src/CStyle/String.s"
 	@echo "... src/CStyle/Util.o"
 	@echo "... src/CStyle/Util.i"
 	@echo "... src/CStyle/Util.s"
@@ -342,6 +399,9 @@ help:
 	@echo "... src/Sort.o"
 	@echo "... src/Sort.i"
 	@echo "... src/Sort.s"
+	@echo "... src/stringMatch.o"
+	@echo "... src/stringMatch.i"
+	@echo "... src/stringMatch.s"
 .PHONY : help
 
 

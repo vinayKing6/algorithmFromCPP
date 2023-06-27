@@ -1,0 +1,8 @@
+.xmake/
+build/
+CMakeFiles/
+.idea/
+CMakeCache.txt
+cmake_install.cmake
+
+.DS_Store

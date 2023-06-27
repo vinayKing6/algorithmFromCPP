@@ -14,6 +14,7 @@
 #include "./test/QueueTest.cpp"
 #include "./solution/ListQues.cpp"
 #include "./solution/STL/STLQues.cpp"
+#include "./test/StringTest.cpp"
 
 using namespace Algorithm;
 
@@ -306,6 +307,7 @@ int main() {
     // TEST::TestLinkedStack();
     // TEST::TestArrayQueue();
     // SOLUTION::TestListQues();
-    SOLUTION::TestJB_5_1();
+    // SOLUTION::TestJB_5_1();
+    TEST::TestKMP();
     return 0;
 }

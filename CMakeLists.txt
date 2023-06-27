@@ -27,17 +27,20 @@ target_link_options(algorithm PRIVATE
 )
 target_sources(algorithm PRIVATE
     main.cpp
-    src/CStyle/List.cpp
-    src/CStyle/Queue.cpp
+    src/stringMatch.cpp
+    src/CStyle/String.cpp
     src/CStyle/Stack.cpp
+    src/CStyle/Queue.cpp
     src/CStyle/Util.cpp
-    src/Divide_and_Conquer.cpp
+    src/CStyle/List.cpp
     src/Sort.cpp
-    include/CStyle/List.h
-    include/CStyle/Queue.h
-    include/CStyle/Stack.h
-    include/CStyle/Util.h
-    include/Divide_and_Conquer.h
+    src/Divide_and_Conquer.cpp
     include/Sort.h
+    include/CStyle/String.h
+    include/CStyle/Stack.h
+    include/CStyle/List.h
+    include/CStyle/Util.h
+    include/CStyle/Queue.h
+    include/Divide_and_Conquer.h
 )
 
