@@ -36,7 +36,8 @@ namespace Algorithm {
             int i=0,j=0;
             int nextVal[P.length()];
             getNextVal(P, nextVal);
-            while (i<S.length() && j<P.length())
+            //注意负数与无符号数的比较
+            while (i<S.length() && j<int (P.length()))
             {
                 if (j==-1 || S[i]==P[j]) {
                     ++i;
