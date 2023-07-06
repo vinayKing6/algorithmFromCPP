@@ -15,6 +15,7 @@
 #include "./solution/ListQues.cpp"
 #include "./solution/STL/STLQues.cpp"
 #include "./test/StringTest.cpp"
+#include "./solution/PAT/PAT_B.cpp"
 
 using namespace Algorithm;
 
@@ -308,6 +309,9 @@ int main() {
     // TEST::TestArrayQueue();
     // SOLUTION::TestListQues();
     // SOLUTION::TestJB_5_1();
-    TEST::TestKMP();
+//    TEST::TestKMP();
+//    SOLUTION::B1001::solution();
+//    SOLUTION::B1032::solution();
+    SOLUTION::B1002::solution();
     return 0;
 }
