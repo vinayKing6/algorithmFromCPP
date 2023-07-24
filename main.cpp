@@ -17,6 +17,7 @@
 #include "./test/StringTest.cpp"
 #include "./solution/PAT/PAT_B.cpp"
 #include "./solution/PAT/PAT_A.cpp"
+#include "./solution/Luogu/simple.cpp"
 
 using namespace Algorithm;
 
@@ -314,7 +315,9 @@ int main() {
 //    SOLUTION::B1001::solution();
 //    SOLUTION::B1032::solution();
 //    SOLUTION::B1002::solution();
-    SOLUTION::B1025 _B1025;
-    _B1025.solution();
+//    SOLUTION::B1025 _B1025;
+//    _B1025.solution();
+    SOLUTION::P2084 _P2084;
+    _P2084.solution();
     return 0;
 }
