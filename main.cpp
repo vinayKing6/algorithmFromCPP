@@ -12,7 +12,7 @@
 #include "./include/CStyle/List.h"
 #include "./test/StackTest.cpp"
 #include "./test/QueueTest.cpp"
-#include "./solution/ListQues.cpp"
+#include "./solution/WD/wd.cpp"
 #include "./solution/STL/STLQues.cpp"
 #include "./test/StringTest.cpp"
 #include "./solution/PAT/PAT_B.cpp"
@@ -309,7 +309,6 @@ int main() {
     // TEST::TestArrayStack();
     // TEST::TestLinkedStack();
     // TEST::TestArrayQueue();
-    // SOLUTION::TestListQues();
     // SOLUTION::TestJB_5_1();
 //    TEST::TestKMP();
 //    SOLUTION::B1001::solution();
@@ -317,7 +316,8 @@ int main() {
 //    SOLUTION::B1002::solution();
 //    SOLUTION::B1025 _B1025;
 //    _B1025.solution();
-    SOLUTION::P2084 _P2084;
-    _P2084.solution();
+    // SOLUTION::P2084 _P2084;
+    // _P2084.solution();
+    SOLUTION::ListPuzzles::TestListQues();
     return 0;
 }
