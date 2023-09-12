@@ -318,6 +318,6 @@ int main() {
 //    _B1025.solution();
     // SOLUTION::P2084 _P2084;
     // _P2084.solution();
-    SOLUTION::ListPuzzles::TestListQues();
+    SOLUTION::WD::ListPuzzles::TestListQues();
     return 0;
 }
