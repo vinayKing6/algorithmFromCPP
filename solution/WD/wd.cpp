@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iterator>
 #include <ostream>
+#include <string>
 #include "../../include/CStyle/Util.h"
 
 using namespace Algorithm;
@@ -242,12 +243,167 @@ namespace SOLUTION {
                 }
         };
 
+        /**
+         * 408真题 2009 查找链表倒数k个位置的值
+         */
+        class W2_2_3_7_22{
+
+            public:
+                struct Node{
+                    int data;
+                    Node *next;
+                };
+
+                static Node *BruteForce(Node *L,int k){
+                    int l=0;//算表长
+                    Node *p=L;
+                    while (p->next!=nullptr) {
+                        l++;
+                        p=p->next;
+                    }//到表尾
+                    if (k>l) {
+                        return nullptr;
+                    }
+                    p=L;//到表头
+                    for(int i=1;i<=l-k+1;i++){
+                        p=p->next;
+                    }
+                    return p;
+                }
+
+                static Node *data(){
+                    Node *L=(Node *)malloc(sizeof(Node));
+                    L->data=-1;
+                    L->next=nullptr;
+                    for (int i=0;i<10;i++) {
+                        Node *p=(Node *)malloc(sizeof(Node));
+                        p->data=i;
+                        p->next=L->next;
+                        L->next=p;
+                    }
+                    return L;
+                }
+
+                /**
+                 * 王道解法，时间复杂度O(n)
+                 */
+                static Node *Answer(Node *L,int k){
+                    //只扫描一遍
+                    Node *fast=L->next;
+                    Node *slow=L->next;
+                    int count=0; //记录fast与slow之间的间隔
+                    while (fast!=nullptr) {
+                        if (count<k) {
+                            count++;//使间隔增加到k
+                        }else {
+                            slow=slow->next;//间隔达到k与fast一同前进
+                        }
+                        fast=fast->next;//无论如何fast都前进遍历
+                    }
+                    return slow;
+                }
+
+                static void solution(){
+                    std::cout<<BruteForce(data(), 5)->data<<std::endl;
+                    std::cout<<Answer(data(), 5)->data<<std::endl;
+                }
+
+        };
+
+        /**
+         * 408真题 2012真题，字符串共享后缀 
+         */
+        class W2_2_3_7_23{
+            public:
+                struct Node{
+                    char data;
+                    Node *next;
+                };
+
+                /**
+                 * 暴力解 时间复杂度O(n^2)
+                 */
+                static Node *BruteForce(Node *str1,Node *str2){
+                    int m=0;
+                    int n=0;
+                    Node *p=str1;
+                    Node *q=str2;
+
+                    //先算长度
+                    while (p!=nullptr) {
+                        m++;
+                        p=p->next;
+                    }
+                    while (q!=nullptr) {
+                        n++;
+                        q=q->next;
+                    }
+
+                    p=str1;
+                    q=str2;
+                    //暴力解
+                    while (p!=nullptr) {
+                        q=str2;//从头来过
+                        while (q!=nullptr) {
+                            if (q==p) {
+                                return q;
+                            }else {
+                                q=q->next;
+                            }
+                        }
+                        p=p->next;
+                    }
+                    return p;
+                }
+
+                static void data(Node *&str1,Node *&str2){
+                    //建立题目里面的共享单链表
+                    char s1[]="gnidaol";
+                    char s2[]="eb";
+
+                    str1=(Node *)malloc(sizeof(Node));
+                    str2=(Node *)malloc(sizeof(Node));
+                    str1->next=nullptr;
+                    str2->next=nullptr;
+                    Node *tmp=nullptr;
+                    
+                    for(int i=0;i<7;i++){
+                        Node *p=(Node *)malloc(sizeof(Node));
+                        if (s1[i]=='i') {
+                            tmp=p;
+                        }
+                        p->data=s1[i];
+                        p->next=str1->next;
+                        str1->next=p;
+                    }
+
+                    for(int i=0;i<2;i++){
+                        Node *q=(Node *)malloc(sizeof(Node));
+                        q->data=s2[i];
+                        q->next=str2->next;
+                        str2->next=q;
+                    }
+
+                    str2->next->next->next=tmp;
+                }
+            
+                static void solution(){
+                    Node *str1,* str2;
+                    data(str1 ,str2);
+                    Node *r=BruteForce(str1,str2);
+                }
+
+
+        };
+
         void TestListQues(){
             // TestW2_2_3_10();
             // TestW2_2_3_11();
             // TestW2_2_3_12();
             // W2_2_3_13::solution();
-            W2_2_3_14::solution();
+            // W2_2_3_14::solution();
+            // W2_2_3_7_22::solution();
+            W2_2_3_7_23::solution();
         }
     }
 
