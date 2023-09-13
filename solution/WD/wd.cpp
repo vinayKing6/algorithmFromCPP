@@ -478,26 +478,56 @@ namespace SOLUTION {
                      * 暴力解
                      */
 
+                    /**
+                     * 寻找倒数第一个元素
+                     */
                     static Node *find_tail(Node *L){
                         while (L->next!=nullptr) {
                             L=L->next;
                         }
                         return L;
                     }
+
+                    /**
+                     * 寻找倒数第二个元素
+                     */
+                    static Node *find_last_sec(Node *L){
+                        while (L->next!=nullptr&&L->next->next!=nullptr) {
+                            L=L->next;
+                        }
+                        return L;
+                    }
+
+                    /**
+                     * 暴力解 时间复杂度O(n^2)
+                     */
                     static Node *BruteForce(Node *L){
                         Node *head=L;
                         Node *tail=find_tail(L);
+                        Node *last_sec=find_last_sec(L);
 
                         int i=0;
                         while (tail!=head) {
                             if (i%2==0) {
+                                //i是偶数就不插入直接跳
                                 i++;
                                 head=head->next;
                             }else {
+                                last_sec->next=tail->next;
                                 tail->next=head->next;
-                                head->next=tail;
+                                head->next=tail; //如果i是奇数就把最后一个插入到head和head.next之间
+                                head=tail;//让head跳到插入的那个位置
+                                i++;
+                                tail=find_tail(L);//更新最后的值
+                                last_sec=find_last_sec(L);//更新倒数第二个值
                             }
                         }
+                        return L;
+                    }
+
+                    static void solution(){
+                        Node *L=data();
+                        BruteForce(L);
                     }
             };
 
@@ -509,7 +539,8 @@ namespace SOLUTION {
                 // W2_2_3_14::solution();
                 // W2_2_3_7_22::solution();
                 // W2_2_3_7_23::solution();
-                W2_2_3_7_24::solution();
+                // W2_2_3_7_24::solution();
+                W2_2_3_7_25::solution();
             }
         }
     }
