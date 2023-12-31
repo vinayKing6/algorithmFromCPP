@@ -10,6 +10,7 @@
 #include <string>
 #include "include/Divide_and_Conquer.h"
 #include "./include/CStyle/List.h"
+#include "./include/CStyle/String.h"
 #include "./test/StackTest.cpp"
 #include "./test/QueueTest.cpp"
 #include "./solution/WD/wd.cpp"
@@ -18,6 +19,7 @@
 #include "./solution/PAT/PAT_B.cpp"
 #include "./solution/PAT/PAT_A.cpp"
 #include "./solution/Luogu/simple.cpp"
+#include "./solution/LeetCode/LcTest.cpp"
 
 using namespace Algorithm;
 
@@ -318,6 +320,9 @@ int main() {
 //    _B1025.solution();
     // SOLUTION::P2084 _P2084;
     // _P2084.solution();
-    SOLUTION::WD::ListPuzzles::TestListQues();
+    // SOLUTION::WD::ListPuzzles::TestListQues();
+    // SOLUTION::LC::test();
+    std::vector<std::string> sv;
+    SM::SplitString("1901-01-30", sv, "-");
     return 0;
 }
