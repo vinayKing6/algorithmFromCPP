@@ -323,6 +323,6 @@ int main() {
     // SOLUTION::WD::ListPuzzles::TestListQues();
     // SOLUTION::LC::test();
     std::vector<std::string> sv;
-    SM::SplitString("1901-01-30", sv, "-");
+    STR::SplitString("1901-01-30", sv, "-");
     return 0;
 }

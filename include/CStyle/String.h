@@ -4,7 +4,7 @@
 
 namespace Algorithm {
 
-    namespace SM {
+    namespace STR {
         //string matching Algorithm
 
         /**
