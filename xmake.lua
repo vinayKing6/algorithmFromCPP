@@ -6,7 +6,7 @@ target("algorithm")
     add_files("src/**.cpp")
     add_includedirs("include")
     add_headerfiles("include/(**.h)")
-
+set_languages("c99", "c++11")
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
