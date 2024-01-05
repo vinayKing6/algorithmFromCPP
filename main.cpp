@@ -2,6 +2,7 @@
 #include <iostream>
 #include "./include/CStyle/Queue.h"
 #include "./src/Sort.cpp"
+#include "./src/Dynamic.cpp"
 #include <iterator>
 #include <ostream>
 #include <vector>
@@ -326,5 +327,6 @@ int main()
     // std::vector<std::string> sv;
     // STR::SplitString("1901-01-30", sv, "-");
     SOLUTION::LC::test();
+    // DP::RodCutting::test();
     return 0;
 }

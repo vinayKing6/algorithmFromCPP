@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "limits": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "__availability": "cpp",
+        "__config": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "locale": "cpp",
+        "type_traits": "cpp"
+    }
+}
