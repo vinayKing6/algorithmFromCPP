@@ -326,7 +326,7 @@ int main()
     // SOLUTION::LC::test();
     // std::vector<std::string> sv;
     // STR::SplitString("1901-01-30", sv, "-");
-    SOLUTION::LC::test();
-    // DP::RodCutting::test();
+    // SOLUTION::LC::test();
+    DP::RodCutting::test();
     return 0;
 }

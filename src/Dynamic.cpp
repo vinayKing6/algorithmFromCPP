@@ -19,7 +19,7 @@ namespace Algorithm
             {
                 this->n = n;
                 this->prices = prices;
-                res=TopDown();
+                res=BottomUp();
             }
             // ~RodCutting();
 
@@ -53,6 +53,18 @@ namespace Algorithm
                 }
                 auxliar[n] = optimal;
                 return optimal;
+            }
+
+            int BottomUp(){
+                //不递归,具体请见CLRS
+                std::vector<int> auxliar(n+1,-1);
+                auxliar[0]=0;//长度为0肯定价格为0
+                for(int i=1;i<=n;i++){
+                    for(int j=1;j<=i;j++){
+                        auxliar[i]=std::max(auxliar[i],prices[j-1]+auxliar[i-j]);//第一段j不分,第二段分
+                    }
+                }
+                return auxliar[n];
             }
 
             static void test()
