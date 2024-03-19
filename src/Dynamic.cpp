@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
+#include <limits>
 
 namespace Algorithm
 {
@@ -74,6 +76,68 @@ namespace Algorithm
             }
         };
 
+        class MatrixChain {
+            //动态规划 矩阵链乘法链
+            //此算法只实现bottomUp方法,具体请参考算法导论
+        private:
+            /*data*/
+            std::vector<int> p;//矩阵链的维度Ai的维度表示为p[i-1,i],其中i从1开始
+            std::vector<std::vector<int>> memory;
+            std::vector<std::vector<int>> split;
+
+        public:
+            MatrixChain(std::vector<int> &dimensions){
+                p=dimensions;
+            }
+
+            void Order(){
+                //方便起见,m,s均从1开始
+                int n=p.size()-1;
+                //初始值是最大值
+                std::vector<std::vector<int>> m(n+1,std::vector<int>(n+1,std::numeric_limits<int>::max()));//m[i,j]表示Ai~Aj相乘所需最小的开销,请见算法导论
+                std::vector<std::vector<int>> s(n+1,std::vector<int>(n+1,0));//s[i,j]表示Ai~Aj相乘所经中间的矩阵,请见算法导论
+                //bottom up方法
+                //m[i,i]必定是0,即对角线,单个矩阵不用相乘
+                for(int i=1;i<=n;i++){
+                    m[i][i]=0;
+                    s[i][i]=i;
+                }
+                //从矩阵乘法链长度2开始.直到n
+                for(int length=2;length<=n;length++){
+                    //由于j-i+1=length,其中i从1开始,因为矩阵下标从1开始,显然这里是先确定矩阵链长度的
+                    for(int i=1;i<=n-length+1;i++){//j<=n,所以i<=n-length+1
+                        int j=length+i-1;//确定此时矩阵链下界Ai~Aj
+                        for(int k=i;k<=j-1;k++){//从Ai~Aj中遍历找分界矩阵
+                            int cost=m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j];//Ai左维度*Ak右维度*Aj右维度
+                            if(cost<m[i][j]){
+                                m[i][j]=cost;//存储最优开销
+                                s[i][j]=k;//存储最有解中间矩阵
+                            }
+                        }
+                    }
+                }
+                this->memory=m;
+                this->split=s;
+            }
+
+            void PrintOptimalParens(int i,int j){
+                if(i==j){
+                    std::cout<<"A"<<split[i][i];
+                } else{
+                    std::cout<<"(";
+                    PrintOptimalParens(i,split[i][j]);//很明显这是递归树
+                    PrintOptimalParens(split[i][j]+1,j);
+                    std::cout<<")";
+                }
+            }
+
+            static void test(){
+                std::vector<int> dimensions={30,35,15,5,10,20,25};
+                MatrixChain M(dimensions);
+                M.Order();
+                M.PrintOptimalParens(1,dimensions.size()-1);
+            }
+        };
         
 
     }

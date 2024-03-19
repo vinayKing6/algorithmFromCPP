@@ -15,7 +15,17 @@ namespace Algorithm{
      * @param size
      */
     template <typename T>
-    void Insert_Sort(T *array,int size);
+    void Insert_Sort(std::vector<T> &array,int size){
+        for (int i = 1; i < size; ++i) {
+            T key=array[i];
+            int j=i-1;
+            while (j>=0&&array[j]>key){
+                array[j+1]=array[j];
+                j--; //you can not write inside [] like array[j--], i have no idea
+            }
+            array[j+1]=key;
+        }
+    }
 
     /**
      *

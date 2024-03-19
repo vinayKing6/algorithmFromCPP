@@ -1,6 +1,5 @@
 #include <iostream>
 #include "../../include/CStyle/Queue.h"
-#include "../Sort.cpp"
 #include "../../include/CStyle/Stack.h"
 
 using namespace Algorithm;
